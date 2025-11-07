@@ -26,7 +26,15 @@ import {
 } from 'lucide-react';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved === 'dark';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch (e) {
+      return false;
+    }
+  });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState({});
@@ -169,6 +177,21 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
+  // Sync `dark` class on <html> and persist preference
+  useEffect(() => {
+    try {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    } catch (e) {
+      // ignore (e.g., during SSR or restricted environments)
+    }
+  }, [darkMode]);
+
   // Scroll to section
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -211,7 +234,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <div className={darkMode ? 'dark' : ''}>
+      
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -239,6 +262,9 @@ const App = () => {
               <div className="flex items-center space-x-4">
                 <button
                   onClick={toggleDarkMode}
+                  aria-pressed={darkMode}
+                  aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                  title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
                   className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 >
                   {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -807,7 +833,6 @@ const App = () => {
           background: #9ca3af;
         }
       `}</style>
-      </div>
     </div>
   );
 };
