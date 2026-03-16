@@ -73,7 +73,7 @@ const App = () => {
       bg: "bg-blue-50",
       border: "border-blue-200",
       tag: "bg-blue-100 text-blue-700",
-      items: ["HTML", "CSS", "Javascript", "React js", "Tailwind", "React_refine", "Kintone", "WordPress", "i18next"]
+      items: ["HTML", "CSS", "Javascript", "React js", "Tailwind", "React_refine", "WordPress", "i18next"]
     },
     {
       category: "Back End",
@@ -94,13 +94,13 @@ const App = () => {
       items: ["MySQL", "MongoDB", "Firebase", "SQLite 3"]
     },
     {
-      category: "Other Tools",
+      category: "Other",
       icon: Wrench,
       color: "from-orange-500 to-amber-400",
       bg: "bg-orange-50",
       border: "border-orange-200",
       tag: "bg-orange-100 text-orange-700",
-      items: ["Git", "Github", "Figma", "Microsoft Office", "Photoshop", "Illustrator"]
+      items: ["Kintone", "Github", "Figma", "Microsoft Office", "Photoshop", "Illustrator"]
     },
     {
       category: "Languages",
@@ -128,8 +128,8 @@ const App = () => {
       title: "Employees management system",
       description: "Created a comprehensive employees management system. Designed and developed the website using React, Node and Mongodb, implementing features for employee data management, attendance tracking, and performance evaluation.",
       tech: ["React", "Node.js", "Mongodb"],
-      github: "#",
       image: systoryimage,
+      github: "https://github.com/KONGCHAN-999",
       featured: true
     },
     {
@@ -138,16 +138,15 @@ const App = () => {
       description: "Built a professional website for iATER using modern web technologies including HTML, CSS, React, Node.js, and MySQL.",
       image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
       tech: ["React", "Node.js", "MySQL", "JavaScript"],
-      github: "#",
+      github: "https://github.com/KONGCHAN-999",
       featured: false
     },
     {
       id: 4,
-      title: "JBROTHERS COFFEE Website",
-      description: "Created a complete website for JBROTHERS COFFEE using WordPress, featuring custom design and e-commerce functionality.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-      tech: ["WordPress"],
-      github: "#",
+      title: "Student management system",
+      description: "Developed a student management system to help schools manage student information, attendance, and grades. Used Django for backend development and SQLite3 for database management.",
+      tech: ["Django", "Python", "SQLite3"],
+      github: "https://github.com/KONGCHAN-999",
       featured: false
     }
   ];
