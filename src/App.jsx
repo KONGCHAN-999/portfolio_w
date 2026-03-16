@@ -27,6 +27,7 @@ import {
 import mat_05 from './assets/mat_05.jpg';
 import profileImg from '/src/assets/profile.jpg';
 import systoryimage from '/src/assets/systoryimage.png';
+import Resume_K from '/src/assets/Resume_K.pdf';
 
 const App = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,7 +60,7 @@ const App = () => {
     email: "kongchun1995@gmail.com",
     phone: "+856 020 77487690",
     bio: "I'm a web developer who loves creating and designing websites. I work hard and thrive in team environments.",
-    resumeUrl: "/Resume_K.pdf",
+    resumeUrl: Resume_K,
     github: "https://github.com/KONGCHAN-999",
     facebook: "https://facebook.com/",
     mail: "https://mail.google.com/",
