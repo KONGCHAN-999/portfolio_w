@@ -24,8 +24,9 @@ import {
   Globe2
 } from 'lucide-react';
 
-// Replace with: import profileImg from './assets/profile.jpg';
-const profileImg = '/src/assets/profile.jpg';
+import mat_05 from './assets/mat_05.jpg';
+import profileImg from '/src/assets/profile.jpg';
+import systoryimage from '/src/assets/systoryimage.png';
 
 const App = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -117,7 +118,7 @@ const App = () => {
       id: 1,
       title: "Kintone Workplace Platform Plugin",
       description: "Developed plug-ins for Kintone, an all-in-one workplace platform. Used JavaScript to create and customize web page functions.",
-      image: "src/assets/mat_05.jpg",
+      image: mat_05,
       tech: ["JavaScript", "Kintone"],
       github: "https://github.com/KONGCHAN-999",
       featured: true
@@ -128,7 +129,7 @@ const App = () => {
       description: "Created a comprehensive employees management system. Designed and developed the website using React, Node and Mongodb, implementing features for employee data management, attendance tracking, and performance evaluation.",
       tech: ["React", "Node.js", "Mongodb"],
       github: "#",
-      image: "src/assets/systoryimage.png",
+      image: systoryimage,
       featured: true
     },
     {
